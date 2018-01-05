@@ -1,4 +1,4 @@
-#A simple python script for randomizers
+# A simple python script for randomizers
 
 What matters more when watching somebody play a
 randomizer is the key items they have gotten, rather
