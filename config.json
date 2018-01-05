@@ -1,0 +1,21 @@
+{ 
+	"columns": 4,
+	"size": [60,60],
+	"timerfont": { "family": "Dejavu Sans Mono", "size": 16, "weight": "bold" },
+	"timercolor": "dark blue",
+	"imagelist": 
+	[ 
+		{  "images": ["gfx/TNT_grey.png","gfx/TNT.png"] },
+		{  "images": ["gfx/crown_grey.png","gfx/crown.png", "gfx/key-transparent.png"] },
+		{  "images": ["gfx/cube_grey.png","gfx/cube.png"] },
+		{  "images": ["gfx/slab_grey.png","gfx/slab.png"] },
+		{  "images": ["gfx/floater_grey.png","gfx/floater.png"] },
+		{  "images": ["gfx/bottle_grey.png","gfx/bottle.png"] },
+		{  "images": ["gfx/rod_grey.png","gfx/rod.png"] },
+		{  "images": ["gfx/masamune-dashed.png","gfx/masamune-highlight.png"] },
+		{  "images": ["gfx/fire_orb_grey.png","gfx/fire_orb.png"] },
+		{  "images": ["gfx/earth_orb_grey.png", "gfx/earth_orb.png"]},
+		{  "images": ["gfx/water_orb_grey.png", "gfx/water_orb.png"] },
+		{  "images": ["gfx/air_orb_grey.png", "gfx/air_orb.png"] }
+	]
+}
