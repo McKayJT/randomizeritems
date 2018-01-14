@@ -5,17 +5,44 @@
 	"timercolor": "dark blue",
 	"imagelist": 
 	[ 
-		{  "images": ["gfx/TNT_grey.png","gfx/TNT.png"] },
-		{  "images": ["gfx/crown_grey.png","gfx/crown.png", "gfx/key-transparent.png"] },
-		{  "images": ["gfx/cube_grey.png","gfx/cube.png"] },
-		{  "images": ["gfx/slab_grey.png","gfx/slab.png"] },
-		{  "images": ["gfx/floater_grey.png","gfx/floater.png"] },
-		{  "images": ["gfx/bottle_grey.png","gfx/bottle.png"] },
-		{  "images": ["gfx/rod_grey.png","gfx/rod.png"] },
+		{  "images": ["gfx/TNT_grey.png","gfx/TNT.png"],
+		   "hooks": [
+			{"type": "memory","address": "0x6026", "value": 1, "image": 1}
+			]
+		},
+		{  "images": ["gfx/crown_grey.png","gfx/crown.png", "gfx/key-transparent.png"],
+		   "hooks": [
+			{"type": "memory","address": "0x6022", "value": 1, "image": 1},
+			{"type": "memory","address": "0x6025", "value": 1, "image": 2, "priority": 1 }
+			]
+		},
+		{  "images": ["gfx/cube_grey.png","gfx/cube.png"],
+		   "hooks": [ { "type": "memory", "address": "0x602E", "value": 1, "image": 1 } ]
+		},
+		{  "images": ["gfx/slab_grey.png","gfx/slab.png"],
+		   "hooks": [ { "type": "memory", "address": "0x6028", "value": 1, "image": 1 } ]
+		},
+		{  "images": ["gfx/floater_grey.png","gfx/floater.png"],
+		   "hooks": [ { "type": "memory", "address": "0x602B", "value": 1, "image": 1 } ]
+		},
+		{  "images": ["gfx/bottle_grey.png","gfx/bottle.png"],
+		   "hooks": [ { "type": "memory", "address": "0x602F", "value": 1, "image": 1 } ]
+		},
+		{  "images": ["gfx/rod_grey.png","gfx/rod.png"],
+		   "hooks": [ { "type": "memory", "address": "0x602A", "value": 1, "image": 1 } ]
+		},
 		{  "images": ["gfx/masamune-dashed.png","gfx/masamune-highlight.png"] },
-		{  "images": ["gfx/fire_orb_grey.png","gfx/fire_orb.png"] },
-		{  "images": ["gfx/earth_orb_grey.png", "gfx/earth_orb.png"]},
-		{  "images": ["gfx/water_orb_grey.png", "gfx/water_orb.png"] },
-		{  "images": ["gfx/air_orb_grey.png", "gfx/air_orb.png"] }
+		{  "images": ["gfx/fire_orb_grey.png","gfx/fire_orb.png"],
+		   "hooks": [ { "type": "memory", "address": "0x6032", "value": 1, "image": 1 } ]
+		},
+		{  "images": ["gfx/earth_orb_grey.png", "gfx/earth_orb.png"],
+		   "hooks": [ { "type": "memory", "address": "0x6035", "value": 1, "image": 1 } ]
+		},
+		{  "images": ["gfx/water_orb_grey.png", "gfx/water_orb.png"],
+		   "hooks": [ { "type": "memory", "address": "0x6033", "value": 1, "image": 1 } ]
+		},
+		{  "images": ["gfx/air_orb_grey.png", "gfx/air_orb.png"],
+		   "hooks": [ { "type": "memory", "address": "0x6034", "value": 1, "image": 1 } ]
+		}
 	]
 }
