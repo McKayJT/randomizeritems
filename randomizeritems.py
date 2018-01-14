@@ -164,10 +164,10 @@ class RandomizerItems(Tk):
         if not self.timerRunning:
             return
         self.passed = time.monotonic() - self.startTime
-        seconds = floor(self.passed) % 60
-        minutes = floor(floor(self.passed) % (60 * 60) / 60)
-        hours = floor(floor(self.passed) % (60 * 60 * 60) / (60 * 60))
-        fract = self.passed - floor(self.passed)
+        seconds = floor(self.passed)
+        fract = self.passed - seconds
+        hours, seconds = divmod(seconds, 60 * 60)
+        minutes, seconds = divmod(seconds, 60)
         if hours > 0: 
             self.timeCount.set("%d:%02d:%02d.%01d" % (hours, minutes, seconds, (fract * 10)))
         else:
