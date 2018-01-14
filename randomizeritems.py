@@ -6,7 +6,6 @@ from tkinter import font
 from PIL import Image
 from PIL import ImageTk
 from math import *
-from collections import namedtuple
 from queue import Queue
 import json
 import time
@@ -78,7 +77,7 @@ class RandomizerItems(Tk):
     def createListener(self):
         socketpath = os.environ.get("XDG_RUNTIME_DIR", ".") + "/randomizer.sock"
         if os.path.exists(socketpath):
-            os.remove(socketpath);
+            os.remove(socketpath)
         self.listener = EmuDatagramServer(socketpath,EmuDatagramHandler)
         for address in self.addressListeners.keys():
             self.listener.addresses.append(address)
@@ -132,7 +131,7 @@ class RandomizerItems(Tk):
         addr = int(address, 0)
         if addr not in self.addressListeners:
             self.addressListeners[addr] = []
-        self.addressListeners[addr].append(callback);
+        self.addressListeners[addr].append(callback)
 
     def reset(self):
         self.timerRunning = False
@@ -191,13 +190,13 @@ class ToggleImageLabel(ttk.Label):
             self.images.append(tkimg)
         if "hooks" in imagelist:
             for hook in imagelist["hooks"]:
-                self.addHook(hook, main);
+                self.addHook(hook, main)
 
         self["image"] = self.images[self.currentImage]
 
     def addHook(self, hook, main):
         if hook["type"] == "memory":
-            self.addMemoryHook(hook, main);
+            self.addMemoryHook(hook, main)
 
     def addMemoryHook(self, hook, main):
         address = hook["address"]
