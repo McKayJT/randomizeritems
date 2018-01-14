@@ -183,6 +183,7 @@ class ToggleImageLabel(ttk.Label):
         self.images = []
         self.currentImage = 0
         self.currentPriority = 0
+        self.memoryMap = {}
 
         self.bind('<ButtonPress>', lambda e: self.switchImage(e))
         for image in imagelist["images"]:
@@ -197,6 +198,8 @@ class ToggleImageLabel(ttk.Label):
     def addHook(self, hook, main):
         if hook["type"] == "memory":
             self.addMemoryHook(hook, main)
+        elif hook["type"] == "count":
+            self.addCountHook(hook, main)
 
     def addMemoryHook(self, hook, main):
         address = hook["address"]
@@ -204,6 +207,14 @@ class ToggleImageLabel(ttk.Label):
         image = hook["image"]
         priority = hook.get("priority", 0)
         main.addWatch(address, lambda d, v=value, i=image, p=priority: self.setImage(v, d, i, p))
+
+    def addCountHook(self, hook, main):
+        addresses = hook["addresses"]
+        value = int(hook["value"], 0)
+        mask = hook.get("mask", "0xFF")
+        mask = int(mask, 0);
+        for address in addresses:
+            main.addWatch(address, lambda d, a=address, v=value, m=mask: self.countMemory(a, v, d, m))
 
     def setImage(self, value, data, image, priority):
         if priority < self.currentPriority:
@@ -213,6 +224,18 @@ class ToggleImageLabel(ttk.Label):
             self.currentImage = image
             self.currentPriority = priority
             self["image"] = self.images[self.currentImage]
+
+    def countMemory(self, address, value, data, mask):
+        self.memoryMap[address] = data
+        itemCount = 0
+        for addr, data in self.memoryMap.items():
+            if (data & mask) == value:
+                itemCount += 1
+        # make sure we don't go past the end of images
+        if itemCount > len(self.images) - 1:
+            itemCount = len(self.images) - 1
+        self.currentImage = itemCount
+        self["image"] = self.images[self.currentImage]
 
     def switchImage(self, event):
 

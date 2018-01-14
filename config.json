@@ -31,7 +31,14 @@
 		{  "images": ["gfx/rod_grey.png","gfx/rod.png"],
 		   "hooks": [ { "type": "memory", "address": "0x602A", "value": 1, "image": 1 } ]
 		},
-		{  "images": ["gfx/masamune-dashed.png","gfx/masamune-highlight.png"] },
+		{  "images": ["gfx/masamune-dashed.png","gfx/masamune-highlight.png"],
+		   "hooks": [ { "type": "count", "value": "0x28", "mask": "0x7F",
+		   "addresses": ["0x6118", "0x6119", "0x611A", "0x611B",
+				 "0x6158", "0x6159", "0x615A", "0x615B",
+				 "0x6198", "0x6199", "0x619A", "0x619B",
+				 "0x61D8", "0x61D9", "0x61DA", "0x61DB" ] }
+			    ]
+		},
 		{  "images": ["gfx/fire_orb_grey.png","gfx/fire_orb.png"],
 		   "hooks": [ { "type": "memory", "address": "0x6032", "value": 1, "image": 1 } ]
 		},
