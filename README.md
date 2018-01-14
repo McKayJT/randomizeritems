@@ -6,8 +6,8 @@ than splits. This program allows you to quickly set up
 an item tracker with nothing more than a few images.
 
 In order to use the hooks feature, you probably need to
-be using [my customized version of nestopia.]
-(https://github.com/McKayJT/nestopia/tree/randomizer-hacks)
+be using
+[my customized version of nestopia.](https://github.com/McKayJT/nestopia/tree/randomizer-hacks)
 
 It also contains a built-in timer, because I wanted it
 for my convenience.
