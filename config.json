@@ -28,8 +28,20 @@
 		{  "images": ["gfx/bottle_grey.png","gfx/bottle.png"],
 		   "hooks": [ { "type": "memory", "address": "0x602F", "value": 1, "image": 1 } ]
 		},
+		{  "images": ["gfx/ruby-grey.png","gfx/ruby.png"],
+		   "hooks": [ { "type": "memory", "address": "0x6029", "value": 1, "image": 1 } ]
+		},
 		{  "images": ["gfx/rod_grey.png","gfx/rod.png"],
 		   "hooks": [ { "type": "memory", "address": "0x602A", "value": 1, "image": 1 } ]
+		},
+		{  "images": ["gfx/tail-grey.png","gfx/tail.png"],
+		   "hooks": [ { "type": "memory", "address": "0x602D", "value": 1, "image": 1 } ]
+		},
+		{  "images": ["gfx/adamant-grey.png","gfx/adamant.png", "gfx/xcalibur.png"],
+		   "hooks": [
+			{"type": "memory","address": "0x6027", "value": 1, "image": 1},
+			{"type": "memory","address": "0x6209", "value": 3, "image": 2, "priority": 1 }
+			]
 		},
 		{  "images": ["gfx/masamune-dashed.png","gfx/masamune-highlight.png"],
 		   "hooks": [ { "type": "count", "value": "0x28", "mask": "0x7F",
@@ -37,6 +49,14 @@
 				 "0x6158", "0x6159", "0x615A", "0x615B",
 				 "0x6198", "0x6199", "0x619A", "0x619B",
 				 "0x61D8", "0x61D9", "0x61DA", "0x61DB" ] }
+			    ]
+		},
+		{  "images": ["gfx/ribbon-grey.png","gfx/ribbon.png", "gfx/ribbon-x2.png", "gfx/ribbon-x3.png"],
+		   "hooks": [ { "type": "count", "value": "0x20", "mask": "0x7F",
+		   "addresses": ["0x611C", "0x611D", "0x611E", "0x611F",
+				 "0x615C", "0x615D", "0x615E", "0x615F",
+				 "0x619C", "0x619D", "0x619E", "0x619F",
+				 "0x61DC", "0x61DD", "0x61DE", "0x61DF" ] }
 			    ]
 		},
 		{  "images": ["gfx/fire_orb_grey.png","gfx/fire_orb.png"],
