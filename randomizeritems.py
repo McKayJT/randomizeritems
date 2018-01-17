@@ -115,14 +115,9 @@ class RandomizerItems(Tk):
                                font=timerFont, foreground=config["timercolor"])
         timerLabel.grid(column=0, row=1, columnspan=columns, sticky=(E))
 
-        maxrows = 0
         for index, images in enumerate(config["imagelist"]):
-
-            row = 2 + floor(index / columns)
-            if row > maxrows:
-                maxrows = row
-
-            column = index % columns
+            row, column = divmod(index, columns)
+            row += 2
             label = ToggleImageLabel(container, images, imageSize, self)
             label.grid(column=column, row=row, sticky=(W))
             self.imageLabels.append(label)
@@ -238,7 +233,6 @@ class ToggleImageLabel(ttk.Label):
         self["image"] = self.images[self.currentImage]
 
     def switchImage(self, event):
-
         if event.num == 1:
             self.currentImage += 1
         elif event.num == 3:
